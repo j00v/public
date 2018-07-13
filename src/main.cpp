@@ -2126,7 +2126,7 @@ int64_t GetBlockValue(int nHeight)
             return 2500 * COIN;
     }
 
-    if (nHeight == 89215) {
+    if (nHeight == 92473) {
         return 1206657 * COIN;
     }
 
@@ -2186,7 +2186,7 @@ bool IsInitialBlockDownload()
     if (lockIBDState)
         return false;
     bool state = (chainActive.Height() < pindexBestHeader->nHeight - 24 * 6 ||
-                  pindexBestHeader->GetBlockTime() < GetTime() - 6 * 60 * 60) && chainActive.Height() > 89195; // ~144 blocks behind -> 2 x fork detection time
+                  pindexBestHeader->GetBlockTime() < GetTime() - 6 * 60 * 60) && chainActive.Height() > 92453; // ~144 blocks behind -> 2 x fork detection time
     if (!state)
         lockIBDState = true;
     return state;
